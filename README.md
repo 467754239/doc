@@ -21,3 +21,13 @@ ec2-import-instance ./AMI-centos7-disk1.vmdk -f vmdk -t m3.xlarge -a x86_64 -b a
 aws ec2 import-image --cli-input-json "{  \"Description\": \"linux\", \"DiskContainers\": [ { \"Description\": \"First CLI task\", \"Format\": \"ova\",\"UserBucket\": { \"S3Bucket\": \"sengled-ami\", \"S3Key\" : \"AMI-platform.ova\" } } ]}" --platform linux
 ``` 
 ![Alt text](/images/upload_ami.png)
+
+
+## CentOS 7.x rc.local服务
+```
+systemctl status | start | enable | stop rc-local.service
+/etc/rc.local 不等于 /etc/rc.d/rc.local
+
+rc.local服务可参考
+https://www.centos.org/forums/viewtopic.php?t=52660
+```
