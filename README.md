@@ -16,8 +16,8 @@ Completed successfully
 
 中区(无需手动上传s3)
 ec2-import-instance ./AMI-centos7-disk1.vmdk -f vmdk -t m3.xlarge -a x86_64 -b agent -o AKIxxxxx -w A1Hxxx  -O AKIxxx -W A1Hxxx --region cn-north-1 --subnet subnet-8f378eea  -p linux
-![Alt text](/images/upload_ami.png)
 
 美区(需要手动上传s3)
 aws ec2 import-image --cli-input-json "{  \"Description\": \"linux\", \"DiskContainers\": [ { \"Description\": \"First CLI task\", \"Format\": \"ova\",\"UserBucket\": { \"S3Bucket\": \"sengled-ami\", \"S3Key\" : \"AMI-platform.ova\" } } ]}" --platform linux
 ``` 
+![Alt text](/images/upload_ami.png)
