@@ -31,3 +31,9 @@ systemctl status | start | enable | stop rc-local.service
 rc.local服务可参考
 https://www.centos.org/forums/viewtopic.php?t=52660
 ```
+
+
+## vim支持golang语法高亮
+```
+
+```
