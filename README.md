@@ -19,6 +19,16 @@ ec2-import-instance ./AMI-centos7-disk1.vmdk -f vmdk -t m3.xlarge -a x86_64 -b a
 
 美区(需要手动上传s3)
 aws ec2 import-image --cli-input-json "{  \"Description\": \"linux\", \"DiskContainers\": [ { \"Description\": \"First CLI task\", \"Format\": \"ova\",\"UserBucket\": { \"S3Bucket\": \"sengled-ami\", \"S3Key\" : \"AMI-platform.ova\" } } ]}" --platform linux
+
+问题
+使用vmimport上传过一个镜像，后来上传终止了，但是产生的实例i-0cf0ebb63e9fa4300 终止不了。
+1. 如果您是通过ec2-import-instance 命令导入的实例，可以使用以下方式取消：
+使用aws ec2 describe-conversion-tasks 列出所有导入过的实例任务；
+然后使用aws ec2 cancel-conversion-task --conversion-task-id import-i-fg0hd3oy，取消这个导入任务。
+
+2. 如果是使用aws ec2 import-image 命令导入的镜像，可以使用以下方式取消：
+使用aws ec2 describe-import-image-tasks 列出所有的导入镜像任务；
+然后使用aws ec2 cancel-import-task --import-task-id import-ami-abcd1234，取消这个导入任务。
 ``` 
 ![Alt text](/images/upload_ami.png)
 
