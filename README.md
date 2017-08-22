@@ -50,6 +50,6 @@ https://www.centos.org/forums/viewtopic.php?t=52660
 
 ## django ajax跨域
 ```
-#proxy_set_header   Access-Control-Allow-Method "POST,GET";
+add_header   'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
 add_header   'Access-Control-Allow-Origin' '*';
 ```
