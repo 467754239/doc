@@ -53,3 +53,10 @@ https://www.centos.org/forums/viewtopic.php?t=52660
 add_header   'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
 add_header   'Access-Control-Allow-Origin' '*';
 ```
+
+## mkrdns
+[参考](http://ftp.tu-chemnitz.de/pub/linux/dag/redhat/el6/en/x86_64/rpmforge/RPMS/)
+```
+wget http://ftp.tu-chemnitz.de/pub/linux/dag/redhat/el6/en/x86_64/rpmforge/RPMS/mkrdns-3.3-1.el6.rf.noarch.rpm
+yum localinstall mkrdns-3.3-1.el6.rf.noarch.rpm
+```
